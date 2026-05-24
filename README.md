@@ -1,0 +1,87 @@
+# Meaning of Life — Alexa Skill
+
+![Dutch Bros Alexa Skill](DutchBros_Alexa.png)
+
+A custom Amazon Alexa skill that finally answers one of humanity's oldest questions. Ask Alexa what the meaning of life is and get the truth philosophers have overlooked for centuries: **Dutch Bros Coffee**.
+
+---
+
+## How to Use
+
+1. Enable the skill on your Alexa device.
+2. Say: **"Alexa, open meaning of life"**
+3. Then ask: **"What is the meaning of life?"**
+4. Alexa will respond: *"The meaning of life is Dutch Bros Coffee."*
+
+---
+
+## Project Structure
+
+```
+├── lambda/
+│   ├── index.js                          # Lambda function handler
+│   └── package.json                      # Node.js dependencies
+├── skill-package/
+│   ├── skill.json                        # Skill manifest
+│   └── interactionModels/
+│       └── custom/
+│           └── en-US.json               # Intents and utterances
+└── ask-states.json                       # ASK CLI deployment state
+```
+
+---
+
+## Deployment
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v14+
+- [ASK CLI](https://developer.amazon.com/en-US/docs/alexa/smapi/quick-start-alexa-skills-kit-command-line-interface.html)
+- An [Amazon Developer account](https://developer.amazon.com/)
+- An [AWS account](https://aws.amazon.com/) (for Lambda)
+
+### Steps
+
+**1. Clone the repo**
+```bash
+git clone https://github.com/ddavis83864/DutchBros.git
+cd DutchBros
+```
+
+**2. Install dependencies**
+```bash
+cd lambda && npm install && cd ..
+```
+
+**3. Configure ASK CLI**
+```bash
+ask configure
+```
+
+**4. Deploy**
+```bash
+ask deploy
+```
+
+**5. Test**
+```bash
+ask dialog --locale en-US
+```
+Then type: `what is the meaning of life`
+
+---
+
+## Sample Utterances
+
+- *"What is the meaning of life?"*
+- *"What's the meaning of life?"*
+- *"Tell me the meaning of life."*
+- *"What does life mean?"*
+
+---
+
+## Tech Stack
+
+- **Runtime:** Node.js (AWS Lambda)
+- **SDK:** [ASK SDK v2](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs)
+- **Category:** Novelty & Humor
