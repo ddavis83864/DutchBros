@@ -1,0 +1,38 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "meaning of life",
+      "intents": [
+        {
+          "name": "MeaningOfLifeIntent",
+          "slots": [],
+          "samples": [
+            "what is the meaning of life",
+            "what's the meaning of life",
+            "tell me the meaning of life",
+            "what does life mean",
+            "what is life's meaning",
+            "the meaning of life"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": []
+    }
+  }
+}

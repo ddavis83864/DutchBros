@@ -1,0 +1,31 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Meaning of Life",
+          "summary": "Find out the true meaning of life.",
+          "description": "A simple skill that reveals the true meaning of life. Just ask Alexa: 'What is the meaning of life?' and discover the answer that philosophers have overlooked for centuries.",
+          "examplePhrases": [
+            "Alexa, open meaning of life",
+            "Alexa, ask meaning of life what is the meaning of life",
+            "Alexa, ask meaning of life what's the meaning of life"
+          ],
+          "keywords": ["meaning", "life", "dutch bros", "coffee", "fun", "humor"]
+        }
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Open the skill and ask 'what is the meaning of life'.",
+      "category": "NOVELTY_HUMOR",
+      "distributionCountries": ["US"]
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}
