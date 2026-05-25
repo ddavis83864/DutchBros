@@ -16,15 +16,10 @@
       },
       "isAvailableWorldwide": false,
       "testingInstructions": "Open the skill and ask 'what is the meaning of life'.",
-      "category": "NOVELTY_HUMOR",
       "distributionCountries": ["US"]
     },
     "apis": {
-      "custom": {
-        "endpoint": {
-          "sourceDir": "lambda"
-        }
-      }
+      "custom": {}
     },
     "manifestVersion": "1.0"
   }
