@@ -19,13 +19,14 @@ A custom Amazon Alexa skill that finally answers one of humanity's oldest questi
 
 ```
 ├── lambda/
-│   ├── index.js                          # Lambda function handler
-│   └── package.json                      # Node.js dependencies
+│   ├── index.js                          # Lambda function handler (zero dependencies)
+│   └── package.json                      # Node.js package info
 ├── skill-package/
 │   ├── skill.json                        # Skill manifest
 │   └── interactionModels/
 │       └── custom/
 │           └── en-US.json               # Intents and utterances
+├── ask-resources.json                    # ASK CLI v2 project config
 └── ask-states.json                       # ASK CLI deployment state
 ```
 
@@ -36,9 +37,9 @@ A custom Amazon Alexa skill that finally answers one of humanity's oldest questi
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) v14+
-- [ASK CLI](https://developer.amazon.com/en-US/docs/alexa/smapi/quick-start-alexa-skills-kit-command-line-interface.html)
+- [ASK CLI](https://developer.amazon.com/en-US/docs/alexa/smapi/quick-start-alexa-skills-kit-command-line-interface.html) (`npm install -g ask-cli`)
 - An [Amazon Developer account](https://developer.amazon.com/)
-- An [AWS account](https://aws.amazon.com/) (for Lambda)
+- An [AWS account](https://aws.amazon.com/) with CLI credentials configured (`aws configure`)
 
 ### Steps
 
@@ -48,26 +49,30 @@ git clone https://github.com/ddavis83864/DutchBros.git
 cd DutchBros
 ```
 
-**2. Install dependencies**
-```bash
-cd lambda && npm install && cd ..
-```
-
-**3. Configure ASK CLI**
+**2. Configure ASK CLI**
 ```bash
 ask configure
 ```
 
-**4. Deploy**
+**3. Deploy**
 ```bash
 ask deploy
 ```
 
-**5. Test**
-```bash
-ask dialog --locale en-US
-```
-Then type: `what is the meaning of life`
+---
+
+## Testing
+
+### Browser (Recommended)
+1. Go to [developer.amazon.com/alexa/console/ask](https://developer.amazon.com/alexa/console/ask)
+2. Open the **Meaning of Life** skill
+3. Click the **Test** tab and set the dropdown to **Development**
+4. Type: `open meaning of life`
+5. Then type: `what is the meaning of life`
+
+### Real Alexa Device
+Any Alexa device signed into the same Amazon developer account can run the skill in Development mode without publishing. Just say:
+> *"Alexa, open meaning of life"*
 
 ---
 
@@ -82,6 +87,6 @@ Then type: `what is the meaning of life`
 
 ## Tech Stack
 
-- **Runtime:** Node.js (AWS Lambda)
-- **SDK:** [ASK SDK v2](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs)
-- **Category:** Novelty & Humor
+- **Runtime:** Node.js 18.x (AWS Lambda)
+- **Dependencies:** None — zero-dependency handler
+- **Deployment:** ASK CLI v2 with Lambda deployer
